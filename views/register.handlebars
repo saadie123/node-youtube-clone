@@ -1,0 +1,49 @@
+<div class="row justify-content-center mt-3">
+    <div class="col-md-6">
+        <h1 class="mb-3 text-center">Register</h1>
+        <hr>
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" value="{{form.name}}" class="form-control {{#if errors.name}}invalid {{/if}}" placeholder="Name">                {{#if
+                errors}}
+                <div class="text-danger">
+                    {{#each errors.name}}
+                    <span class="d-block">{{message}}</span>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" value="{{form.email}}" class="form-control {{#if errors.email}}invalid {{/if}}" placeholder="Email">                {{#if
+                errors}}
+                <div class="text-danger">
+                    {{#each errors.email}}
+                    <span class="d-block">{{message}}</span>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" value="{{form.password}}" class="form-control {{#if errors.password}}invalid {{/if}}"
+                    placeholder="Password"> {{#if errors}}
+                <div class="text-danger">
+                    {{#each errors.password}}
+                    <span class="d-block">{{message}}</span>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+            <div class="form-group">
+                <input type="password" name="confirm" value="{{form.confirm}}" class="form-control {{#if errors.confirm}}invalid {{/if}}"
+                    placeholder="Confirm Password"> {{#if errors}}
+                <div class="text-danger">
+                    {{#each errors.confirm}}
+                    <span class="d-block">{{message}}</span>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Register</button>
+        </form>
+    </div>
+</div>
