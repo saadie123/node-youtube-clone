@@ -18,7 +18,13 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String
-  }
+  },
+  videos: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "videos"
+    }
+  ]
 });
 
 module.exports = mongoose.model("users", userSchema);

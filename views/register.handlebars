@@ -5,7 +5,7 @@
         <form action="/register" method="POST">
             <div class="form-group">
                 <input type="text" name="name" value="{{form.name}}" class="form-control {{#if errors.name}}invalid {{/if}}" placeholder="Name">                {{#if
-                errors}}
+                errors.name}}
                 <div class="text-danger">
                     {{#each errors.name}}
                     <span class="d-block">{{message}}</span>
@@ -15,7 +15,7 @@
             </div>
             <div class="form-group">
                 <input type="email" name="email" value="{{form.email}}" class="form-control {{#if errors.email}}invalid {{/if}}" placeholder="Email">                {{#if
-                errors}}
+                errors.email}}
                 <div class="text-danger">
                     {{#each errors.email}}
                     <span class="d-block">{{message}}</span>
@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <input type="password" name="password" value="{{form.password}}" class="form-control {{#if errors.password}}invalid {{/if}}"
-                    placeholder="Password"> {{#if errors}}
+                    placeholder="Password"> {{#if errors.password}}
                 <div class="text-danger">
                     {{#each errors.password}}
                     <span class="d-block">{{message}}</span>
@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <input type="password" name="confirm" value="{{form.confirm}}" class="form-control {{#if errors.confirm}}invalid {{/if}}"
-                    placeholder="Confirm Password"> {{#if errors}}
+                    placeholder="Confirm Password"> {{#if errors.confirm}}
                 <div class="text-danger">
                     {{#each errors.confirm}}
                     <span class="d-block">{{message}}</span>

@@ -1,7 +1,6 @@
-const express = require("express");
+const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const passport = require("passport");
-const router = express.Router();
 
 const User = require("../models/User");
 const registerValidator = require("../validation/register");
@@ -10,8 +9,13 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/register", async (req, res) => {
+router.get("/register", (req, res) => {
   res.render("register");
+});
+
+router.get("/logout", (req, res) => {
+  req.logout();
+  res.redirect("/login");
 });
 
 router.post("/register", async (req, res) => {

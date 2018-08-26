@@ -1,0 +1,25 @@
+<div class="row mt-3">
+    <div class="col-md-12">
+        <h1>My Videos</h1>
+        <hr>
+        <a href="/my-videos/new" class="btn btn-success">New Video</a>
+        <div class="videos mt-3">
+            {{#each videos}}
+            <a href="/watch/{{_id}}" class="card-link">
+                <div class="card p-10">
+                    <div class="card-body d-flex align-items-center">
+                        <img class="img-responsive" src="{{thumbnail.thumbnailUrl}}" alt="preview" width="150">
+                        <div class="ml-3">
+                            <h5 class="card-title">
+                                {{title}}
+                            </h5>
+                            <h6 class="card-subtitle mb-3 text-muted">By <a href="#">{{user.name}}</a></h6>
+                            <h6 class="card-subtitle text-muted">Uploaded on {{dateFormat date 'MMM DD, YYYY'}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+    </div>
+</div>

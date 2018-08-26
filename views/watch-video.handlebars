@@ -1,0 +1,32 @@
+<div class="row mt-3">
+    <div class="col-md-8 col-sm-12 col-xs-12">
+        <div class="video mb-3">
+            <video height="450" controls autoplay='autoplay'>
+                <source id="video-src" src="{{video.file.fileUrl}}" type="video/mp4"> Your browser does not support the video
+                tag.
+            </video>
+        </div>
+        <h3>{{video.title}}</h3>
+        <p class="lead">{{video.description}}</p>
+    </div>
+    <div class="col-md-4 col-sm-12 col-xs-12">
+        <h3>More Videos</h3>
+        <hr> {{#each videos}}
+        <a href="/watch/{{_id}}" class="card-link">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <img class="img-responsive" src="{{thumbnail.thumbnailUrl}}" alt="preview" width="150">
+                    <div class="ml-3">
+                        <h6 class="card-title">
+                            {{title}}
+                        </h6>
+                        <span class="card-subtitle mb-3 text-muted">By <a href="#">{{user.name}}</a></span>
+                        <br>
+                        <span class="card-subtitle text-muted">Uploaded on {{dateFormat date 'MMM DD, YYYY'}}</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {{/each}}
+    </div>
+</div>

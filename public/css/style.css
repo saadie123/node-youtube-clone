@@ -1,3 +1,13 @@
 .invalid {
   border-color: red;
 }
+#home-preview {
+  display: none;
+}
+#video-preview {
+  display: none;
+}
+a.card-link,
+a.card-link:hover {
+  color: inherit;
+}
